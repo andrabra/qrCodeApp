@@ -24,14 +24,15 @@ const QrCodeGenerator = () => {
         className="flex flex-col justify-center items-center gap-5"
       >
         <input
+          placeholder="Type text..."
           value={inputChar}
           onChange={handleChange}
-          className="border"
+          className="border rounded-sm p-2"
           type="text"
         />
         <button
           onClick={handleClick}
-          className="border p-2 cursor-pointer"
+          className="border rounded-sm p-2 cursor-pointer hover:gray-600 focus:ring-1 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
           type="submit"
         >
           Generate
