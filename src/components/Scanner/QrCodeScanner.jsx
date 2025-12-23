@@ -11,10 +11,10 @@ const QrCodeScanner = () => {
   };
 
   const scanHandler = (result) => {
-    const resultValue = result[0].value;
+    const resultValue = result[0].rawValue;
 
     setScannedQrCode(resultValue);
-    localStorage.setItem(SCAN_DATA, [...resultValue]);
+    // localStorage.setItem(SCAN_DATA, [...resultValue]);
   };
 
   return (
