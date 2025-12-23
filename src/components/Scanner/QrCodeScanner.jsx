@@ -1,5 +1,6 @@
 import { Scanner } from '@yudiel/react-qr-scanner';
 import { useState } from 'react';
+import { SCAN_DATA } from '../../constants';
 
 const QrCodeScanner = () => {
   const [scannedQrCode, setScannedQrCode] = useState(null);
@@ -10,7 +11,10 @@ const QrCodeScanner = () => {
   };
 
   const scanHandler = (result) => {
-    setScannedQrCode(result[0].rawValue);
+    const resultValue = result[0].value;
+
+    setScannedQrCode(resultValue);
+    localStorage.setItem(SCAN_DATA, [...resultValue]);
   };
 
   return (
