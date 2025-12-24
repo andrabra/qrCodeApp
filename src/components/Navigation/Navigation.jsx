@@ -15,10 +15,10 @@ const Navigation = () => {
       <Link className='border p-2' to='/scanner'>
         Сканировать QR-код
       </Link>
-      <Link className='border p-2' to='/'>
+      <Link className='border p-2' to='/generate-history'>
         История генерирования
       </Link>
-      <Link className='border p-2' to='/'>
+      <Link className='border p-2' to='/scan-history'>
         История сканирования
       </Link>
     </nav>

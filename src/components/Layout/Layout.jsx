@@ -3,6 +3,8 @@ import QrCodeScanner from '../Scanner/QrCodeScanner';
 import Navigation from '../Navigation/Navigation';
 import { Route, Routes } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { GenerateHistory } from '../GenerateHistory/GenerateHistory';
+import { ScanHistory } from '../ScanHistory/ScanHistory';
 
 const Layout = () => {
   return (
@@ -20,8 +22,8 @@ const Layout = () => {
       <Routes>
         <Route path='/generator' element={<QrCodeGenerator />} />
         <Route path='/scanner' element={<QrCodeScanner />} />
-        <Route path='/scanner' element={<QrCodeScanner />} />
-        <Route path='/scanner' element={<QrCodeScanner />} />
+        <Route path='/generate-history' element={<GenerateHistory />} />
+        <Route path='/scan-history' element={<ScanHistory />} />
       </Routes>
     </div>
   );
