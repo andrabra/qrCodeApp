@@ -10,7 +10,7 @@ const Layout = () => {
   return (
     <div
       className='
-        flex flex-col items-center gap-5
+        flex flex-col gap-5
         mt-5 px-4
         max-w-5xl mx-auto
       '
