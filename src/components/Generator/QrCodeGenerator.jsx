@@ -44,7 +44,7 @@ const QrCodeGenerator = () => {
           type='text'
         />
         <Button type='submit' onClick={handleClick}>
-          Generate!
+          Сгенерировать!
         </Button>
 
         <div className='min-h-70'>
