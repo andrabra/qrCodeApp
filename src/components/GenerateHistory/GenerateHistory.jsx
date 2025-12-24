@@ -1,5 +1,6 @@
 import { GENERATE_DATA } from '../../constants';
 import { QRCodeSVG } from 'qrcode.react';
+import StyledLink from '../common/StyledLink';
 
 export const GenerateHistory = () => {
   const prevData = JSON.parse(localStorage.getItem(GENERATE_DATA) || '[]');
@@ -10,7 +11,7 @@ export const GenerateHistory = () => {
       {prevData.map((item) => (
         <li className='flex flex-col gap-1.5' key={item}>
           <QRCodeSVG size='128' value={item} />
-          <p>{item}</p>
+          <StyledLink to={item}>{item}</StyledLink>
         </li>
       ))}
     </ul>
