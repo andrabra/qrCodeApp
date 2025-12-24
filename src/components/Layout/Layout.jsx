@@ -16,7 +16,7 @@ const Layout = () => {
       '
     >
       <h1 className='text-3xl font-bold underline'>
-        <Link to='/'>QrCodeGenerator</Link>
+        QrCodeGenerator
       </h1>
       <Navigation />
       <Routes>
