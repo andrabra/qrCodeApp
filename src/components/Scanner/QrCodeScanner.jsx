@@ -14,7 +14,9 @@ const QrCodeScanner = () => {
     const resultValue = result[0].rawValue;
 
     setScannedQrCode(resultValue);
-    // localStorage.setItem(SCAN_DATA, [...resultValue]);
+
+    const prevData = JSON.parse(localStorage.getItem(SCAN_DATA)) || [];
+    localStorage.setItem(SCAN_DATA, [...prevData, resultValue]);
   };
 
   return (
