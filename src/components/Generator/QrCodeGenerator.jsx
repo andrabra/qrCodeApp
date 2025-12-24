@@ -1,6 +1,7 @@
 import { QRCodeSVG } from 'qrcode.react';
 import { useState } from 'react';
 import Button from '../common/button';
+import { GENERATE_DATA } from '../../constants';
 
 const QrCodeGenerator = () => {
   const [inputChar, setInputChar] = useState('');
@@ -8,6 +9,17 @@ const QrCodeGenerator = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
+
+    const prevData = JSON.parse(localStorage.getItem(GENERATE_DATA) || '[]');
+
+    if (prevData.includes(inputChar)) {
+      return;
+    }
+
+    localStorage.setItem(
+      GENERATE_DATA,
+      JSON.stringify([...prevData, inputChar])
+    );
 
     setResultShowQrCode(inputChar);
     setInputChar('');
@@ -37,7 +49,10 @@ const QrCodeGenerator = () => {
 
         <div className='min-h-70'>
           {resultShowQrCode !== '' && (
-            <QRCodeSVG size='256' value={resultShowQrCode} />
+            <div>
+              <QRCodeSVG size='256' value={resultShowQrCode} />
+              <p className='text-center mt-4'>{resultShowQrCode}</p>
+            </div>
           )}
         </div>
       </form>
