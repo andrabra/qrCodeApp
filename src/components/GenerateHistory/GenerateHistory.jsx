@@ -11,7 +11,7 @@ export const GenerateHistory = () => {
       {prevData.map((item) => (
         <li className='flex flex-col gap-1.5' key={item}>
           <QRCodeSVG size='128' value={item} />
-          <StyledLink to={item}>{item}</StyledLink>
+          <StyledLink external to={item}>{item}</StyledLink>
         </li>
       ))}
     </ul>
