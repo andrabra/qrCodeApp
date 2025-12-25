@@ -1,5 +1,6 @@
 import { Scanner } from '@yudiel/react-qr-scanner';
 import { useState } from 'react';
+import StyledLink from '../common/StyledLink';
 import { SCAN_DATA } from '../../constants';
 
 const QrCodeScanner = () => {
@@ -32,7 +33,9 @@ const QrCodeScanner = () => {
 
   return (
     <>
-      <h2 className='text-2xl font-bold underline'>Сканнер QR-кодов и не только</h2>
+      <h2 className='text-2xl font-bold underline'>
+        Сканнер QR-кодов и не только
+      </h2>
       <div className='flex flex-col justify-center items-center gap-5'>
         <Scanner
           onScan={scanHandler}
@@ -40,7 +43,11 @@ const QrCodeScanner = () => {
           styles={scannerStyles}
           onError={(error) => console.log(error?.message)}
         />
-        {scannedQrCode && <p>{scannedQrCode}</p>}
+        {scannedQrCode && (
+          <StyledLink external to={scannedQrCode} className='text-center mt-4'>
+            {scannedQrCode}
+          </StyledLink>
+        )}
       </div>
     </>
   );
