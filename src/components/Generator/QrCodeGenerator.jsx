@@ -9,12 +9,9 @@ const QrCodeGenerator = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
+    if (inputChar === '') return;
 
     const prevData = JSON.parse(localStorage.getItem(GENERATE_DATA) || '[]');
-
-    if (prevData.includes(inputChar)) {
-      return;
-    }
 
     localStorage.setItem(
       GENERATE_DATA,
@@ -49,7 +46,7 @@ const QrCodeGenerator = () => {
 
         <div className='min-h-70'>
           {resultShowQrCode !== '' && (
-            <div>
+            <div className='flex flex-col justify-center items-center'>
               <QRCodeSVG size='256' value={resultShowQrCode} />
               <p className='text-center mt-4'>{resultShowQrCode}</p>
             </div>
