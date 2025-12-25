@@ -24,7 +24,7 @@ const Layout = () => {
       </div>
 
       <Routes>
-        <Route path='/' element={<Navigate to='/generator' replace />} />
+        <Route path='/*' element={<Navigate to='/generator' replace />} />
         <Route path='/generator' element={<QrCodeGenerator />} />
         <Route path='/scanner' element={<QrCodeScanner />} />
         <Route path='/generate-history' element={<GenerateHistory />} />
