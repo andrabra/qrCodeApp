@@ -16,10 +16,13 @@ const Layout = () => {
         max-w-5xl mx-auto
       '
     >
-      <h1 className='text-3xl font-bold underline'>
-        <Link to='/generator'>QrCodeGenerator</Link>
-      </h1>
-      <Navigation />
+      <div className='flex justify-between mb-4'>
+        <h1 className='text-3xl font-bold underline'>
+          <Link to='/generator'>QrCodeGenerator</Link>
+        </h1>
+        <Navigation />
+      </div>
+
       <Routes>
         <Route path='/' element={<Navigate to='/generator' replace />} />
         <Route path='/generator' element={<QrCodeGenerator />} />
