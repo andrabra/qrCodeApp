@@ -31,15 +31,18 @@ const QrCodeScanner = () => {
   };
 
   return (
-    <div className='flex flex-col justify-center items-center gap-5'>
-      <Scanner
-        onScan={scanHandler}
-        components={scannerSettings}
-        styles={scannerStyles}
-        onError={(error) => console.log(error?.message)}
-      />
-      {scannedQrCode && <p>{scannedQrCode}</p>}
-    </div>
+    <>
+      <h2 className='text-2xl font-bold underline'>Сканнер QR-кодов и не только</h2>
+      <div className='flex flex-col justify-center items-center gap-5'>
+        <Scanner
+          onScan={scanHandler}
+          components={scannerSettings}
+          styles={scannerStyles}
+          onError={(error) => console.log(error?.message)}
+        />
+        {scannedQrCode && <p>{scannedQrCode}</p>}
+      </div>
+    </>
   );
 };
 

@@ -7,13 +7,20 @@ export const ScanHistory = () => {
   prevData.reverse();
 
   return (
-    <ul className='flex flex-col justify-start items-start gap-3'>
-      {prevData.map((item) => (
-        <li className='flex flex-col gap-1.5' key={item}>
-          <QRCodeSVG size='128' value={item} />
-          <StyledLink external to={item}>{item}</StyledLink>
-        </li>
-      ))}
-    </ul>
+    <>
+      <h2 className='text-2xl font-bold underline'>История сканирования</h2>
+      <ul className='flex flex-col justify-start items-start gap-3'>
+        {prevData.map((item) => (
+          <li className='flex flex-col gap-1.5' key={item}>
+            <a className='cursor-pointer' href={item} target='_blank'>
+              <QRCodeSVG size='128' value={item} />
+            </a>
+            <StyledLink external to={item}>
+              {item}
+            </StyledLink>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
