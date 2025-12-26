@@ -1,6 +1,7 @@
 import { GENERATE_DATA } from '../../constants';
 import { QRCodeSVG } from 'qrcode.react';
 import StyledLink from '../common/StyledLink';
+import { CopyToClipboardButton } from '../common/CopyToClipboardButton';
 
 export const GenerateHistory = () => {
   const prevData = JSON.parse(localStorage.getItem(GENERATE_DATA) || '[]');
@@ -15,9 +16,12 @@ export const GenerateHistory = () => {
             <a className='cursor-pointer' href={item} target='_blank'>
               <QRCodeSVG size='128' value={item} />
             </a>
-            <StyledLink external to={item}>
-              {item}
-            </StyledLink>
+            <div className='flex justify-center items-center gap-2'>
+              <StyledLink external to={item} className='text-center'>
+                {item}
+              </StyledLink>
+              <CopyToClipboardButton text={item}></CopyToClipboardButton>
+            </div>
           </li>
         ))}
       </ul>

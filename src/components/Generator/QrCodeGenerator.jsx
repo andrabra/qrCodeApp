@@ -2,6 +2,7 @@ import { QRCodeSVG } from 'qrcode.react';
 import { useState } from 'react';
 import Button from '../common/button';
 import StyledLink from '../common/StyledLink';
+import { CopyToClipboardButton } from '../common/CopyToClipboardButton';
 import { GENERATE_DATA } from '../../constants';
 
 const QrCodeGenerator = () => {
@@ -61,13 +62,18 @@ const QrCodeGenerator = () => {
                 >
                   <QRCodeSVG size='256' value={resultShowQrCode} />
                 </a>
-                <StyledLink
-                  external
-                  to={resultShowQrCode}
-                  className='text-center mt-4'
-                >
-                  {resultShowQrCode}
-                </StyledLink>
+                <div className='flex justify-center items-center gap-2 mt-4'>
+                  <StyledLink
+                    external
+                    to={resultShowQrCode}
+                    className='text-center'
+                  >
+                    {resultShowQrCode}
+                  </StyledLink>
+                  <CopyToClipboardButton
+                    text={resultShowQrCode}
+                  ></CopyToClipboardButton>
+                </div>
               </div>
             )}
           </div>

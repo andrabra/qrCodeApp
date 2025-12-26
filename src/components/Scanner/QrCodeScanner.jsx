@@ -44,9 +44,12 @@ const QrCodeScanner = () => {
           onError={(error) => console.log(error?.message)}
         />
         {scannedQrCode && (
-          <StyledLink external to={scannedQrCode} className='text-center mt-4'>
-            {scannedQrCode}
-          </StyledLink>
+          <div className='flex justify-center items-center gap-2 mt-4'>
+            <StyledLink external to={scannedQrCode} className='text-center'>
+              {scannedQrCode}
+            </StyledLink>
+            <CopyToClipboardButton text={scannedQrCode}></CopyToClipboardButton>
+          </div>
         )}
       </div>
     </>
