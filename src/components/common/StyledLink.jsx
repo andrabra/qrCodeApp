@@ -13,6 +13,12 @@ const StyledLink = ({ to, children, className = '', external = false }) => {
     hover:decoration-blue-500/70
     decoration-2
     underline-offset-4
+    text-ellipsis
+    max-w-60
+    sm:max-w-80
+    md:max-w-96
+    lg:max-w-full
+    overflow-hidden
   `;
 
   if (external) {
