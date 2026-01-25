@@ -2,7 +2,6 @@ import { QRCodeSVG } from 'qrcode.react';
 import { useState } from 'react';
 import Button from '../common/button';
 import StyledLink from '../common/StyledLink';
-import { CopyToClipboardButton } from '../common/CopyToClipboardButton';
 import { GENERATE_DATA } from '../../constants';
 
 const QrCodeGenerator = () => {
@@ -35,11 +34,8 @@ const QrCodeGenerator = () => {
     <>
       <h2 className='text-2xl font-bold underline'>Генератор QR-кодов</h2>
       <div className='flex flex-col justify-center items-center gap-5'>
-        <form
-          action=''
-          className='flex flex-col justify-center items-center gap-5 w-full'
-        >
-          <div className='flex w-full bg-blue-500 p-1 rounded-sm'>
+        <form className='flex justify-center items-start gap-5 w-full'>
+          <div className='flex flex-col sm:flex-row w-full bg-blue-500 p-1 rounded-sm'>
             <input
               placeholder='Введите текст...'
               value={inputChar}
@@ -51,33 +47,31 @@ const QrCodeGenerator = () => {
               Сгенерировать!
             </Button>
           </div>
-
-          <div className='min-h-70'>
-            {resultShowQrCode !== '' && (
-              <div className='flex flex-col justify-center items-center'>
-                <a
-                  className='cursor-pointer'
-                  href={resultShowQrCode}
-                  target='_blank'
-                >
-                  <QRCodeSVG size='256' value={resultShowQrCode} />
-                </a>
-                <div className='flex justify-center items-center gap-2 mt-4'>
-                  <StyledLink
-                    external
-                    to={resultShowQrCode}
-                    className='text-center'
-                  >
-                    {resultShowQrCode}
-                  </StyledLink>
-                  <CopyToClipboardButton
-                    text={resultShowQrCode}
-                  ></CopyToClipboardButton>
-                </div>
-              </div>
-            )}
-          </div>
         </form>
+
+        <div className='min-h-70'>
+          {resultShowQrCode !== '' && (
+            <div className='flex flex-col justify-center items-center'>
+              <a
+                className='cursor-pointer'
+                href={resultShowQrCode}
+                target='_blank'
+              >
+                <QRCodeSVG size='256' value={resultShowQrCode} />
+              </a>
+              <div className='flex justify-center items-center gap-2 mt-4'>
+                <StyledLink
+                  withCopyBtn
+                  external
+                  to={resultShowQrCode}
+                  className='text-center'
+                >
+                  {resultShowQrCode}
+                </StyledLink>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

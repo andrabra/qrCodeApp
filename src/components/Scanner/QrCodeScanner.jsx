@@ -13,8 +13,9 @@ const QrCodeScanner = () => {
 
   const scannerStyles = {
     container: {
-      width: '400px',
-      height: '400px',
+      maxWidth: '600px',
+      width: '90%',
+      height: '90%',
     },
   };
 
@@ -45,10 +46,14 @@ const QrCodeScanner = () => {
         />
         {scannedQrCode && (
           <div className='flex justify-center items-center gap-2 mt-4'>
-            <StyledLink external to={scannedQrCode} className='text-center'>
+            <StyledLink
+              withCopyBtn
+              external
+              to={scannedQrCode}
+              className='text-center'
+            >
               {scannedQrCode}
             </StyledLink>
-            <CopyToClipboardButton text={scannedQrCode}></CopyToClipboardButton>
           </div>
         )}
       </div>

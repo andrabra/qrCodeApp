@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
+import { CopyToClipboardButton } from '../common/CopyToClipboardButton';
 
-const StyledLink = ({ to, children, className = '', external = false }) => {
+const StyledLink = ({
+  withCopyBtn = false,
+  to,
+  children,
+  className = '',
+  external = false,
+}) => {
   const baseStyles = `
     text-blue-600
     hover:text-blue-800
@@ -23,21 +30,31 @@ const StyledLink = ({ to, children, className = '', external = false }) => {
 
   if (external) {
     return (
-      <a
-        href={to}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${baseStyles} ${className}`}
-      >
-        {children}
-      </a>
+      <div className='flex justify-center items-center sm:justify-start gap-2'>
+        <a
+          href={to}
+          target='_blank'
+          rel='noopener noreferrer'
+          className={`${baseStyles} ${className}`}
+        >
+          {children}
+        </a>
+        {withCopyBtn ? (
+          <CopyToClipboardButton text={children}></CopyToClipboardButton>
+        ) : null}
+      </div>
     );
   }
 
   return (
-    <Link to={to} className={`${baseStyles} ${className}`}>
-      {children}
-    </Link>
+    <div className='flex justify-center items-center sm:justify-start gap-2'>
+      <Link to={to} className={`${baseStyles} ${className}`}>
+        {children}
+      </Link>
+      {withCopyBtn ? (
+        <CopyToClipboardButton text={children}></CopyToClipboardButton>
+      ) : null}
+    </div>
   );
 };
 

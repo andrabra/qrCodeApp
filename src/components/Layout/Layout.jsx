@@ -17,7 +17,7 @@ const Layout = () => {
       '
     >
       <div className='flex justify-between'>
-        <h1 className='text-3xl font-bold underline'>
+        <h1 className='text-3xl font-bold'>
           <Link to='/generator'>QrCodeGenerator</Link>
         </h1>
         <Navigation />
