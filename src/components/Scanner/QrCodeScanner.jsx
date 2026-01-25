@@ -34,9 +34,7 @@ const QrCodeScanner = () => {
 
   return (
     <>
-      <h2 className='text-2xl font-bold underline'>
-        Сканнер QR-кодов и не только
-      </h2>
+      <h2 className='text-2xl font-bold'>Сканнер QR-кодов и не только</h2>
       <div className='flex flex-col justify-center items-center gap-5'>
         <Scanner
           onScan={scanHandler}

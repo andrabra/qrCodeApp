@@ -8,11 +8,11 @@ export const ScanHistory = () => {
 
   return (
     <>
-      <h2 className='text-2xl font-bold underline'>История сканирования</h2>
-      <ul className='w-full flex flex-col justify-start items-start gap-3'>
+      <h2 className='text-2xl font-bold'>История сканирования</h2>
+      <ul className='flex flex-col justify-start items-start gap-3'>
         {prevData.map((item) => (
           <li
-            className='w-full sm:w-fitflex flex-col justify-center items-center sm:justify-start gap-1.5'
+            className='flex w-full justify-center sm:w-fit sm:justify-start flex-col gap-1.5'
             key={item}
           >
             <a
@@ -20,7 +20,7 @@ export const ScanHistory = () => {
               href={item}
               target='_blank'
             >
-              <QRCodeSVG size='128' value={item} />
+              <QRCodeSVG size='200' value={item} />
             </a>
             <div className='flex justify-center items-center sm:justify-start gap-2'>
               <StyledLink

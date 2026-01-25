@@ -32,7 +32,7 @@ const QrCodeGenerator = () => {
 
   return (
     <>
-      <h2 className='text-2xl font-bold underline'>Генератор QR-кодов</h2>
+      <h2 className='text-2xl font-bold'>Генератор QR-кодов</h2>
       <div className='flex flex-col justify-center items-center gap-5'>
         <form className='flex justify-center items-start gap-5 w-full'>
           <div className='flex flex-col sm:flex-row w-full bg-blue-500 p-1 rounded-sm'>

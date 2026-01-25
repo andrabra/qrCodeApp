@@ -8,7 +8,7 @@ export const GenerateHistory = () => {
 
   return (
     <>
-      <h2 className='text-2xl font-bold underline'>История генерирования</h2>
+      <h2 className='text-2xl font-bold'>История генерирования</h2>
       <ul className='flex flex-col justify-start items-start gap-3'>
         {prevData.map((item) => (
           <li
@@ -20,7 +20,7 @@ export const GenerateHistory = () => {
               href={item}
               target='_blank'
             >
-              <QRCodeSVG size='128' value={item} />
+              <QRCodeSVG size='200' value={item} />
             </a>
             <div className='flex justify-center items-center sm:justify-start gap-2'>
               <StyledLink
